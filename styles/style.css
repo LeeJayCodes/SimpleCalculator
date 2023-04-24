@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --calculator: #FFF;
+    --displayBG: rgba(0,0,0,0.8);
+    --displayFont: #FFF;
+    --buttonbackg: #1BD7BB;
+    --button: rgb(0,0,0);
+    --backgroundGradient: linear-gradient(
+        45deg,
+    #2AF598,
+    #22E4AC,
+    #1BD7BB,
+    #14C9CB,
+    #0FBED8
+);
+}
+html {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    margin: 0 auto;
+    height: 100svh;
+    background-image: var(--backgroundGradient);
+}
+.calculator {
+    background-color: var(--calculator);
+    position: fixed;
+    width: 25vw;
+    height: 50svh;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: (1, 1fr);
+    grid-template-rows: (1,1fr);
+    grid-gap:5px;
+    padding: 5px;
+    border-radius: 20px;
+}
+.display{
+    background-color: var(--displayBG);
+    color: var(--displayFont);
+    border-radius: 20px;
+    font-size: 4em;
+}
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 5px;
+
+}
+.equalBtn{
+    grid-column: span 2;
+}
+.clearBtn{
+    grid-column: span 2;
+}
+
+
+.keypad > button {
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--buttonbackg);
+    color: var(--button);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+
+@media (max-width: 912px){
+    .calculator {
+        height: auto;
+        width: 80%;
+    }
+}
